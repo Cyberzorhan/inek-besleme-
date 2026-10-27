@@ -1,0 +1,11 @@
+{
+  "name": "sut-rasyon",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Süt inekleri için Türkiye şartlarına uygun rasyon hesaplama uygulaması (PWA)",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "python3 -m http.server 8080"
+  }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Süt Rasyon</title>
+  <meta name="description" content="Süt inekleri için Türkiye şartlarına uygun, internetsiz çalışan rasyon hesaplama uygulaması.">
+  <meta name="theme-color" content="#2e7d32">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Süt Rasyon">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="ust">
+    <img src="icons/icon.svg" alt="" width="32" height="32">
+    <h1 id="baslik">Süt Rasyon</h1>
+  </header>
+
+  <main>
+    <section id="sekme-hayvan" class="sekme" data-baslik="Hayvan bilgileri"></section>
+    <section id="sekme-rasyon" class="sekme" data-baslik="Rasyon" hidden></section>
+    <section id="sekme-yemler" class="sekme" data-baslik="Yemler ve fiyatlar" hidden></section>
+    <section id="sekme-kayit" class="sekme" data-baslik="Kayıtlı rasyonlar" hidden></section>
+    <section id="sekme-bilgi" class="sekme" data-baslik="Besleme rehberi" hidden>
+      <div class="kart">
+        <h2>Uygulama nasıl kullanılır?</h2>
+        <ol>
+          <li><b>Hayvan</b> sekmesinde ineğin ırkını, ağırlığını, süt verimini ve dönemini girin. Günlük ihtiyaç hemen hesaplanır.</li>
+          <li><b>Yemler</b> sekmesinde elinizde bulunan yemleri işaretleyin ve kendi bölgenizin fiyatlarını yazın.</li>
+          <li><b>Rasyon</b> sekmesinde <i>En ucuz rasyonu hesapla</i> düğmesine basın ya da yemleri kendiniz ekleyip miktarlarını girin.</li>
+          <li>Tablodaki renklere bakın: <span class="rozet uygun">uygun</span> <span class="rozet dusuk">düşük</span> <span class="rozet yuksek">yüksek</span>.</li>
+        </ol>
+        <p class="kucuk">Miktarlar <b>yaş (verildiği gibi)</b> kg olarak girilir. Besin değerleri kuru madde üzerinden hesaplanır.</p>
+      </div>
+
+      <details class="kart" open>
+        <summary>Temel kurallar</summary>
+        <ul>
+          <li>Rasyon kuru maddesinin <b>en az %40'ı kaba yem</b> (kuru ot, silaj) olmalıdır. Daha azı asidoz, topallık ve süt yağında düşüşe yol açar.</li>
+          <li>Yeme geçişleri <b>7–10 gün içinde, yavaş yavaş</b> yapın. Kesif yemi bir öğünde 3–4 kg'dan fazla vermeyin, günü öğünlere bölün.</li>
+          <li>İnekler günde <b>80–150 litre</b> su içer. Su temiz, serin ve her zaman ulaşılabilir olmalıdır.</li>
+          <li>Rasyona inek başına günde <b>50–100 g tuz</b> ve uygun bir <b>vitamin-mineral karması</b> mutlaka ekleyin; bunlar hesaba dahil değildir.</li>
+          <li>Mümkünse yemleri karıştırarak (TMR) verin; inek seçme yapamaz, rumen dengesi korunur.</li>
+        </ul>
+      </details>
+
+      <details class="kart">
+        <summary>Türkiye'deki yaygın yemler hakkında</summary>
+        <ul>
+          <li><b>Mısır silajı:</b> Kuru maddesi %30–35 olan, danesi süt-hamur olum döneminde hasat edilmiş silaj en iyisidir. Ekşi kokulu, küflü silajı vermeyin.</li>
+          <li><b>Yonca:</b> Çiçeklenme başlangıcında biçilen yonca çok daha besleyicidir. Yağmur yemiş ya da yaprağını dökmüş yoncanın değeri düşer.</li>
+          <li><b>Saman:</b> Enerji ve proteini düşüktür. Yüksek verimli inekte günde 2–3 kg'ı geçmesin; kuru inek için iyi bir dolgu yemidir.</li>
+          <li><b>Pamuk tohumu küspesi ve çiğit:</b> Gossipol içerdiği için ergin ineklerde sınırlı (küspe 3 kg, çiğit 2,5 kg) verin; buzağı ve danalara vermeyin.</li>
+          <li><b>Yaş pancar posası:</b> Ekim–Ocak döneminde ucuz bir enerji kaynağıdır ama çabuk bozulur. Silolanmış (basılmış) posayı tercih edin.</li>
+          <li><b>Hazır süt yemi:</b> Etiketteki ham protein (HP) ve enerji (ME, kcal/kg) değerine bakın. Değerleri Yemler sekmesinde kendi yeminize göre düzenleyin.</li>
+        </ul>
+      </details>
+
+      <details class="kart">
+        <summary>Dönemlere göre besleme</summary>
+        <ul>
+          <li><b>Laktasyon başı (0–100. gün):</b> Verim hızla artar ama iştah geride kalır. Enerjisi yüksek, kaliteli kaba yemi bol bir rasyon verin; kesifi yavaş artırın.</li>
+          <li><b>Kuru dönem (doğuma 60–21 gün):</b> Enerjisi düşük, lifi yüksek bir rasyon verin (saman ve orta kalite ot). İnek yağlanmamalıdır (kondisyon puanı 3–3,5).</li>
+          <li><b>Geçiş dönemi (son 21 gün):</b> Doğum sonrası rasyona alıştırmak için 1–2 kg kesif yem başlayın. Süt hummasına karşı kalsiyumu ve yoncayı sınırlayın.</li>
+          <li><b>Sıcak yaz ayları:</b> Yemi sabah erken ve akşam serinlikte verin. Gölgelik, fan ve bol su sağlayın. Yem tüketimi düştüğü için rasyonun enerji yoğunluğunu artırın.</li>
+        </ul>
+      </details>
+
+      <div class="kart uyari-kutu">
+        <p><b>Önemli:</b> Bu uygulama tahmini değerlerle çalışır ve bir yardımcı araçtır. Yemlerin gerçek besin değeri bölgeye, hasada ve depolamaya göre değişir. Mümkünse yemlerinizi analiz ettirin. Sağlık sorunlarında veteriner hekiminize, rasyon için bir zooteknist veya hayvan besleme uzmanına danışın.</p>
+      </div>
+      <p class="kucuk orta">Hesaplamalar NRC (2001) Süt Sığırı Besin Madde İhtiyaçları esas alınarak yapılmıştır.</p>
+    </section>
+  </main>
+
+  <nav class="alt" aria-label="Sekmeler">
+    <button data-sekme="hayvan" class="aktif"><span aria-hidden="true">🐄</span>Hayvan</button>
+    <button data-sekme="rasyon"><span aria-hidden="true">🧮</span>Rasyon</button>
+    <button data-sekme="yemler"><span aria-hidden="true">🌾</span>Yemler</button>
+    <button data-sekme="kayit"><span aria-hidden="true">💾</span>Kayıtlar</button>
+    <button data-sekme="bilgi"><span aria-hidden="true">📖</span>Rehber</button>
+  </nav>
+
+  <div id="bildirim" class="bildirim" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
